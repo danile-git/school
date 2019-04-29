@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+<swiper  class="header-swiper" indicator-dots="true" circular="true" autoplay="true">
+    <block wx:for="{{headerImg}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}"></image>
+          </swiper-item>
+    </block>
+</swiper>
+<view class="section title-card">
+  <view class="flex-wrp" style="flex-direction:column;">
+    <view class="flex-item title1">零基础直通雅思托福10年课程规划体系 </view>
+    <view class="flex-item title-line"></view>
+    <view class="flex-item title3">从此不用再为教材切换烦心</view>
+  </view>
+</view>
+
+
+<view class="contain">
+ <!-- 导航栏 -->
+ <scroll-view class="tab" scroll-x scroll-left="{{tabScroll}}" scroll-with-animation="true">
+ <block wx:for="{{books.header}}" wx:key="index">
+  <view class="tab-item {{currentTab == index ? 'active' : ''}}" data-current="{{item.id}}" bindtap='clickMenu'>{{item.name}}</view>
+ </block>
+ </scroll-view>
+ <!-- 页面 -->
+ <swiper class="content" style='height: {{height}}px' duration="1000" current="{{currentTab}}" bindchange="changeContent">
+ <swiper-item class="content-item" wx:for="{{menuList}}" wx:key="index">这里是{{item.name}}</swiper-item>
+ </swiper>
+</view>
+
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
