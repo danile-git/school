@@ -10,31 +10,6 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     headerImg: [app.globalData.baseUrl + "/images/tt1.png", app.globalData.baseUrl+"/images/tt2.png"],
-    menuList: [{
-      name: "快车"
-    }, {
-      name: "顺风车"
-    }, {
-      name: "外卖"
-    }, {
-      name: "单车"
-    }, {
-      name: "礼橙专车"
-    }, {
-      name: "出租车"
-    }, {
-      name: "公交"
-    }, {
-      name: "代驾"
-    }, {
-      name: "豪华车"
-    }, {
-      name: "自驾租车"
-    }, {
-      name: "拼车"
-    }, {
-      name: "二手车"
-    }],
       header: [{
         "name": "Starter", "id": "starter", "books": [{
           "id": "starter1",
@@ -43,7 +18,6 @@ Page({
           "desc": "通过漫画表现不同场景的日常交际，培养儿童早期听说、阅读、想象能力。"
         }]
       }, { "name": "初级", "id": "e1st", "books": [] }, { "name": "中级", "id": "e2nd", "books": [] }, { "name": "高考", "id": "e4th", "books": [] }, { "name": "高级", "id": "e3rd", "books": [] }, { "name": "雅思/托福", "id": "e5th", "books": [] }],
-
      books: [{
       "id":"starter",
       "books":[ {
@@ -71,12 +45,7 @@ Page({
     wx.navigateTo({
       url: '../logs/logs'
     })
-  },
-  onShow:function(){
-
-  }
-  ,
-  onLoad: function () {
+  },onLoad: function () {
     // for (var idx in this.data.headerImg) {
     //   var img = this.data.headerImg[idx];
     //   this.data.headerImg[idx] = this.data.baseUrl + img;
@@ -121,7 +90,7 @@ Page({
   },
   onReady: function () {
     wx.setNavigationBarTitle({ //修改标题文字
-      title: ''
+      title:app.globalData.appName
     })
   },
   clickMenu: function (e) {
@@ -133,25 +102,12 @@ Page({
     if (this.data.currentTab == current) {
       return false
     } else {
-      this.setData({ currentTab: current
-       });
-     
+      this.setData({ currentTab: current});
     }
   },
-  eachBooks:function(tag){
-      for(var idx in this.data.books){
-        if(this.data.books[idx].id===tag){
-          var items=this.data.books[idx].books;   
-         return items;
-        }
-      }
-      return [];
-  }
-  ,
   changeContent: function (e) {
     var current = e.detail.current // 获取当前内容所在index,文档有
     var tabWidth = this.data.windowWidth / 5;
-  
     console.log(current);
     this.setData({
       currentTab: current,
