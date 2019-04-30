@@ -1,3 +1,4 @@
+import WxValidate from '../../utils/WxValidate.js'
 //index.js
 //获取应用实例
 const app = getApp()
@@ -17,12 +18,7 @@ Page({
     windowWidth: '',
     height:1000,
     showModalStatus: false,//是否显示
-    currentGoods:{},
-    gg_id: 0,//规格ID
-    gg_txt: '',//规格文本
-    gg_price: 0,//规格价格
-    guigeList: [{ guige: '100', price: '150' }, { guige: '200', price: '150' }, { guige: '300', price: '150' }],
-    num: 1
+    currentGoods:{}
   },
   //事件处理函数
   bindViewTap: function() {
@@ -30,6 +26,28 @@ Page({
       url: '../logs/logs'
     })
   },onLoad: function () {
+
+    this.WxValidate = new WxValidate(
+      {
+        name: {
+          required: true,
+          minlength: 2
+        },
+        phone: {
+          required: true,
+          tel: true
+        }
+      }
+      , {
+        name: {
+          required: '请填正确的姓名',
+        },
+        phone: {
+          required: '请填写您的手机号',
+        }
+      }
+
+    );
     // for (var idx in this.data.headerImg) {
     //   var img = this.data.headerImg[idx];
     //   this.data.headerImg[idx] = this.data.baseUrl + img;
@@ -63,6 +81,7 @@ Page({
         }
       })
     }
+
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -98,45 +117,22 @@ Page({
       tabScroll: (current - 2) * tabWidth
     })
   },
-  filter: function (e) {
-    //console.log(e);
-    var self = this, id = e.currentTarget.dataset.id, txt = e.currentTarget.dataset.txt, price = e.currentTarget.dataset.price
-    self.setData({
-      gg_id: id,
-      gg_txt: txt,
-      gg_price: price
-    });
-  },
+  appointment:function(e){
+      //预约
+    //提交错误描述
+    if (!this.WxValidate.checkForm(e.detail.value)) {
+      const error = this.WxValidate.errorList[0]
+      // `${error.param} : ${error.msg} `
+      wx.showToast({
+        title: `${error.msg} `,
+        image: '/images/error.png',
+        duration: 2000,
+        mask:true
+      })
+      return false
 
-  /* 点击减号 */
-  bindMinus: function () {
-    var num = this.data.num;
-    // 如果大于1时，才可以减  
-    if (num > 1) {
-      num--;
     }
-    // 只有大于一件的时候，才能normal状态，否则disable状态  
-    var minusStatus = num <= 1 ? 'disabled' : 'normal';
-    // 将数值与状态写回  
-    this.setData({
-      num: num,
-      minusStatus: minusStatus
-    });
   },
-  /* 点击加号 */
-  bindPlus: function () {
-    var num = this.data.num;
-    // 不作过多考虑自增1  
-    num++;
-    // 只有大于一件的时候，才能normal状态，否则disable状态  
-    var minusStatus = num < 1 ? 'disabled' : 'normal';
-    // 将数值与状态写回  
-    this.setData({
-      num: num,
-      minusStatus: minusStatus
-    });
-  },
-
   //显示对话框
   showModal: function (e) {
   var current=e.currentTarget.dataset.current;
