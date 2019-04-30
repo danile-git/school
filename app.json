@@ -11,27 +11,27 @@
   },
   "tabBar": {
     "color": "#000",
-    "selectedColor": "#56abe4",
+    "selectedColor": "#ff7501",
     "backgroundColor": "#fff",
     "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/idx.png",
-        "selectedIconPath": "images/idx.png"
+        "iconPath": "images/idx-dis.png",
+        "selectedIconPath": "images/idx-act.png"
       },
       {
         "pagePath": "pages/logs/logs",
         "text": "关于",
-        "iconPath": "images/fix.png",
-        "selectedIconPath": "images/fix.png"
+        "iconPath": "images/about-dis.png",
+        "selectedIconPath": "images/about-act.png"
       },
       {
         "pagePath": "pages/logs/logs",
         "text": "我的",
-        "iconPath": "images/fix.png",
-        "selectedIconPath": "images/fix.png"
+        "iconPath": "images/me-dis.png",
+        "selectedIconPath": "images/me-act.png"
       }
     ]
   },
