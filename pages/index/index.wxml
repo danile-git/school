@@ -63,7 +63,7 @@
    </view>
       <view class="row">
       <text>性别</text>
-       <radio-group class="radio-group">
+       <radio-group class="radio-group" name="sex">
          <radio value="1" checked="checkeded" /><text>男</text>
          <radio value="0"/><text>女</text>
        </radio-group>
