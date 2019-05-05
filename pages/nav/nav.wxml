@@ -1,0 +1,4 @@
+<view class='container'>
+<web-view src="https://orange.natappvip.cc/orange/about.html"> 
+</web-view>
+</view>
