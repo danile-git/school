@@ -41,7 +41,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseUrl: "https://orange.natappvip.cc/orange",
+    baseUrl: "http://100.67.97.142:8080/orange",
     appName: "橘子树英语"
   }
 })

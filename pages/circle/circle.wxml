@@ -1,0 +1,28 @@
+<view class='container'>
+ <view style='flex:1;' class='ccontent'>
+   <scroll-view
+    scroll-y
+    style='height:100%;'
+  >
+  <view style='height:40%'>
+    <image src='{{baseUrl}}/images/h1.png' mode='scaleToFill' style='width:100%;height:100%;'></image>
+  </view>
+     <view class="userinfo">
+      <text class="userinfo-nickname">Daniel</text><image bindtap="bindViewTap" class="userinfo-avatar" src="/images/head2.jpg" mode="cover"></image>     
+    </view>
+  <block wx:for="{{order}}" wx:key="item">
+  
+  <view class="title-card">
+  <view><image bindtap="bindViewTap" class="userinfo-left" src="/images/head2.jpg" mode="cover"></image></view>
+  <view style='flex:1;padding:10rpx;'>
+  <view style='color:rgb(87,105,138);'>Daniel</view>
+    <view class='c-title c-h-left'><text class=''>{{item.desc}}</text></view>
+    <view class='c-img'><image src='{{baseUrl}}{{item.img}}' mode='aspectFit'></image></view>
+    <view class='time'><text >{{item.time}}</text></view>
+  </view>
+     </view>
+     <view class='line'></view>
+   </block>
+  </scroll-view>
+  </view>
+</view>

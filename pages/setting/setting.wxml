@@ -1,0 +1,37 @@
+<view class='container'>
+ <view>
+     <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="/images/head2.jpg" mode="cover"></image>
+      <text class="userinfo-nickname">小锦鲤</text>
+    </block>
+  </view>
+  <form>
+   <text class="line"></text>
+  
+   <view class="row">
+        <text>姓名</text><input type="text" name="name" placeholder=' 昵称' maxlength='6'/> 
+        <text>年龄</text><input type="number" name="age" placeholder=' 年龄' maxlength='2'/>
+   </view>
+      <view class="row">
+      <text>性别</text>
+       <radio-group class="radio-group" name="sex">
+         <radio value="1" checked="checkeded" /><text>男</text>
+         <radio value="0"/><text>女</text>
+       </radio-group>
+   </view>
+   <view class="row">
+
+        <text>手机</text><input type="number" name="phone" placeholder=' 手机号码' maxlength='11' />
+        
+   </view>
+  
+   <text class="line"></text>
+   <view class='btn'>
+    <!-- <button class="button-add" bindtap="addCart">取消</button> -->
+    <button class="button-buy" form-type='submit'>修改</button>
+   </view>
+ </form>
+ </view>
+</view>

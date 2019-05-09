@@ -12,10 +12,6 @@ page{
   flex-direction: column;
   text-align: center;
  align-items: center;
-}.line{
-  margin-top:5px;
-  width: 200rpx;
- border: 1px solid #ff502c;
 }.title{
   font-size: 15px;
   font-style: blod;
@@ -29,18 +25,19 @@ page{
 }
  .title-card{
  background-color: white;
-          border-radius: 2px;
-    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15);
+          /* border-radius: 2px;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15); */
     margin: 0px 10px;
     margin-top:30rpx;
      font-family:PingFangSC-Medium;
      display: flex;
-     flex-direction: column;
+     flex-direction: row;
     }.time{
     display: flex;
     color: #aaa;font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 12px;
     align-items:center;
+    margin-top:5px;
 }.c-head{
   display: flex;
  padding:0px 15px;
@@ -50,7 +47,7 @@ page{
 }
 .c-h-left{
   display: flex;
-  height: 100%;
+  padding: 10px 0px;
   flex: 1;
    align-items: center; 
  vertical-align: middle;
@@ -75,4 +72,38 @@ padding: 0px;
   background-color: #e4e4e4;
 }.ccontent{
   margin-top:20px;
+}.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:flex-end;
+  margin-top:-120rpx;
 }
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 30rpx;
+  background-color: gray;
+  border-radius: 20%;
+}
+
+.userinfo-left {
+  width: 90rpx;
+  height: 90rpx;
+   margin: 10rpx;
+  background-color: gray;
+  border-radius: 20%;
+}
+.userinfo-nickname {
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+}
+ .line{
+   width: 95%;
+  height: 2rpx;
+  display: inline-block;
+  background-color: #f2f2f2;
+  text-align: center;
+ }

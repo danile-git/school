@@ -8,13 +8,17 @@ Page({
    */
   data: {
     title:"新闻中心",
-    baseUrl: app.globalData.baseUrl
+    baseUrl: app.globalData.baseUrl,
+    url:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      url: options.url
+    });
+    console.log(options);
   }
 })
