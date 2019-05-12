@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}.login-btn{
+  opacity: 0;
+  display: none;
 }
 
 .userinfo-avatar {

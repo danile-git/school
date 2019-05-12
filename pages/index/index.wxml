@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+<button wx:if="{{!hasUserInfo && canIUse}}" class='login-btn'  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
 <swiper  class="header-swiper" indicator-dots="true" circular="true" autoplay="true">
     <block wx:for="{{headerImg}}" wx:key="*this">
           <swiper-item>

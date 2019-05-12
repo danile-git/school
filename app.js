@@ -11,11 +11,22 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
+        //http://orange.nat100.top
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // wx.request({
+        //   url: 'http://orange.nat100.top/getopenid', //接口地址
+        //   data: { code: res.code },
+        //   header: {
+        //     'content-type': 'application/json' //默认值
+        //   },
+        //   success: function (res) {
+        //     wx.setStorageSync('openid', res.openid)
+        //     console.log(res.data)
+        //   }
+        // });
       }
     })
     // 获取用户信息
@@ -27,7 +38,6 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -41,7 +51,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseUrl: "http://100.67.97.142:8080/orange",
+    baseUrl: "http://169.254.50.99:8080/orange",
     appName: "橘子树英语"
   }
 })
