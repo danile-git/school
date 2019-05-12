@@ -171,28 +171,14 @@ Page({
 
       },
       success: function (res) {
-        $this.alert({"msg":"succ","code":"1"});
+        app.alert({"msg":"succ","code":"1"});
         console.log(res.data)
       }, fail:function(res){
-        $this.alert({ "msg": "预约失败,请检查网络", "code":"0"});
+        app.alert({ "msg": "预约失败,请检查网络", "code":"0"});
       }
     })
 
 
-  },alert:function(e){
-    var toast = {
-      title: e.msg,
-      image: '/images/error.png',
-      duration: 2000,
-      mask: true
-    };
-    switch(e.code){
-      case "1":
-        toast.image='';
-        toast.icon='success';
-      break;
-    }
-    wx.showToast(toast);
   },
   //显示对话框
   showModal: function (e) {
