@@ -11,7 +11,7 @@
     scroll-y
     style='height:100%;' bindscrolltolower="getNewData"
   >
-  <block wx:for="{{order}}" wx:key="item">
+  <block wx:for="{{news}}" wx:key="item">
   <view class="title-card" hover-class='active-bg' bindtap='navurl' data-url='{{item.url}}'>
     <view class='c-head c-head1'>
     <view class='c-h-left'><image style='width:20px;height:20px;' src='{{baseUrl}}/images/env/logo.png'></image>  橘子树英语</view><view class='time'><text >{{item.time}}</text></view></view>
