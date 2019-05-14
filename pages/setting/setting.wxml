@@ -1,7 +1,7 @@
 <view class='container'>
  <view>
      <view class="userinfo">
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <image bindtap="clickImage" class="userinfo-avatar" src="{{userImg}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <form>
@@ -34,6 +34,12 @@
     <!-- <button class="button-add" bindtap="addCart">取消</button> -->
     <button class="button-buy" form-type='submit'>修改</button>
    </view>
+   <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+        <block wx:for="{{actionSheetItems}}" wx:key="unique">
+            <action-sheet-item bindtap="{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+        </block>
+        <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+    </action-sheet>
  </form>
  </view>
 </view>
