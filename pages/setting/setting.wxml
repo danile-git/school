@@ -4,7 +4,7 @@
       <image bindtap="clickImage" class="userinfo-avatar" src="{{userImg}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-  <form>
+  <form bindsubmit="settingUpdate">
    <text class="line"></text>
   
    <view class="row">

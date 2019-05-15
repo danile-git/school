@@ -1,3 +1,4 @@
+import WxValidate from '../../utils/WxValidate.js'
 //index.js
 //获取应用实例
 const app = getApp()
@@ -34,7 +35,40 @@ Page({
     this.setData({
       gender: _gender,
       userImg: this.data.userInfo.avatarUrl
-    })
+    });
+
+
+    this.WxValidate = new WxValidate(
+      {
+        name: {
+          required: true,
+          minlength: 2
+        }, age: {
+          required: true,
+          max: 99,
+          min: 3
+        },
+        phone: {
+          required: true,
+          tel: true
+        }, sex: {
+          required: true
+        }
+      }
+      , {
+        name: {
+          required: '请填正确的姓名',
+        },
+        phone: {
+          required: '请填写您的手机号',
+        }, age: {
+          required: '请填写年龄',
+        }, sex: {
+          required: '请选择性别',
+        }
+      }
+
+    );
   }, // 点击头像 显示底部菜单
   clickImage: function () {
     var that = this;
@@ -111,6 +145,42 @@ Page({
       },
       fail: function () {
         return typeof cb == "function" && cb(false)
+      }
+    })
+  },
+  settingUpdate:function(e){
+    //提交错误描述
+    var formData = e.detail.value;
+    console.log(formData);
+    if (!this.WxValidate.checkForm(formData)) {
+      const error = this.WxValidate.errorList[0]
+      // `${error.param} : ${error.msg} `
+      wx.showToast({
+        title: `${error.msg} `,
+        image: '/images/error.png',
+        duration: 2000,
+        mask: true
+      })
+      return false;
+    }
+    //预约信息
+    var regInfo = { "name": formData.name, "age": formData.age, "tel": formData.phone, "code": formData.code, "sex": formData.sex };
+    var $this = this;
+    wx.request({
+      url: $this.data.baseUrl + '/test.php', //仅为示例，并非真实的接口地址
+      data: regInfo,
+      method: "POST",
+      dataType: "json",
+      header: {
+        'content-type': 'application/json' // 默认值
+      }, complete: function () {
+
+      },
+      success: function (res) {
+        app.alert({ "msg": "succ", "code": "1" });
+        console.log(res.data)
+      }, fail: function (res) {
+        app.alert({ "msg": "预约失败,请检查网络", "code": "0" });
       }
     })
   }
