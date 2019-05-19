@@ -4,7 +4,7 @@
     scroll-y
     style='height:100%;'
   >
-  <view style='height:40%'>
+  <view style='height:30%'>
     <image src='{{baseUrl}}/images/h1.png' mode='scaleToFill' style='width:100%;height:100%;'></image>
   </view>
      <view class="userinfo">
@@ -19,8 +19,20 @@
     <view class='c-title c-h-left'><text class=''>{{item.desc}}</text></view>
     <view class='c-img'><image src='{{baseUrl}}{{item.img}}' mode='aspectFit'></image></view>
     <view class='time'><text >{{item.time}}</text></view>
+     <view class='goods'>
+     <view class='c-title c-h-left goods-name' style='margin-bottom:0px;'><text class=''> Danile，Danile，Danile，Danile，Danile，Danile，Danile，Danile，Danile</text></view>
+      <view class='line' style='margin-top:0px;padding-top:0px;'></view>
+     <view class='talk'>
+       <view><text class='goods'>Daniel</text>:哈哈哈挺不错的哈哈哈挺不错的哈哈哈挺不错的哈哈哈挺不错的哈哈哈挺不错的哈哈哈挺不错的</view>
+        <view><text class='goods'>Daniel</text>:哈哈哈挺不错的</view>
+          <view><text class='goods'>Daniel</text>:哈哈哈挺不错的</view>
+            <view><text class='goods'>Daniel</text>:哈哈哈挺不错的</view>        
+     </view>
+     </view>
+      
   </view>
      </view>
+    
      <view class='line'></view>
    </block>
   </scroll-view>

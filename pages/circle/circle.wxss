@@ -104,6 +104,25 @@ padding: 0px;
    width: 95%;
   height: 2rpx;
   display: inline-block;
-  background-color: #f2f2f2;
+  background-color:rgb(231,231,232);
   text-align: center;
+ }.goods{
+
+  padding: 5rpx;
+    color:rgb(87,105,138);
+    font-size: 13px;
+     font-style: blod;
+     font-weight: 500;
+     background-color:rgb(243,243,245);
+ }.goods text{
+   margin-left: 5rpx;
+   
+ }.goods-name{
+    padding: 3px 0px;
+ }
+ .talk{
+   margin-top:0px;
+   padding-top: 0px;
+    color:black;
+  
  }
