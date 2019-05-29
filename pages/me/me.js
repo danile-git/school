@@ -63,8 +63,9 @@ Page({
   ,
   mitemClick:function(e){
     if(this.data.hasUserInfo){
+      var user = this.data.userInfo;
     wx.navigateTo({
-      url: e.currentTarget.dataset.url +"?uid=osnCH5P9GZ0S3wXDC_h0lFksEy6c",
+      url: e.currentTarget.dataset.url +"?uid=osnCH5P9GZ0S3wXDC_h0lFksEy6c"
     })
     }
   else{

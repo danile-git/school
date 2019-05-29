@@ -77,13 +77,16 @@ padding: 0px;
   flex-direction: row;
   align-items: center;
   justify-content:flex-end;
-  margin-top:-120rpx;
+   margin-top:-120rpx;
+   /* background-color: red;  */
+   z-index: 999;
+   position: relative;
 }
 
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 30rpx;
+  margin: 30rpx; 
   background-color: gray;
   border-radius: 20%;
 }
@@ -116,13 +119,90 @@ padding: 0px;
      background-color:rgb(243,243,245);
  }.goods text{
    margin-left: 5rpx;
+
    
  }.goods-name{
     padding: 3px 0px;
+    overflow-wrap: break-word;
  }
  .talk{
    margin-top:0px;
    padding-top: 0px;
     color:black;
   
- }
+ }.goods-img{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 15rpx;
+  margin-right: 5rpx;
+}
+.triangle-up {
+  display: flex;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 16px solid rgb(243,243,245);
+    }.click-view{
+    
+    }.time{
+      display: flex;
+      flex-direction: row;
+    }
+    .click-circle{
+  width: 50rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  }/* 弹出框 */
+.pop-up-box{
+  position: absolute;
+  height: 55rpx;
+  border-radius: 10rpx;
+  right: 100rpx;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}.pop-up-box text{
+  font-size: 12px;
+  padding: 5px;
+  color: white;
+}
+.default-view{
+  height: 500rpx;
+}   .click-circle2{
+  width: 40rpx;
+  height: 40rpx;
+  }.talk-c{
+    margin-left:5rpx;
+    vertical-align: middle;
+    display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  }
+
+  .pocket_input {
+position: fixed;
+bottom: 0;
+padding:15rpx 0px;
+ width: 100%;
+overflow: hidden;
+border-top:1px solid rgb(231,231,232);
+
+background-color: #F4F5F6;
+}
+.input_style{
+margin-left: 10rpx;
+margin-right: 10rpx;
+margin-bottom: 15rpx;
+background-color: white;
+font-size: 30rpx;
+padding-left: 15rpx;
+height: 40px;
+}
+.input-placeholder{
+margin-left: 25rpx;
+}
